@@ -1,0 +1,34 @@
+.table {
+    width: 100%;
+    max-width: 1500px;
+    overflow: scroll;
+}
+
+table {
+    width: 100%;
+}
+
+.action_buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.mat-column-Actions {
+    width: 200px;
+}
+
+
+.columntrue {
+    background-color: blue;
+}
+.columnfalse {
+    background-color: red;
+}
+
+.column {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50% !important;
+}

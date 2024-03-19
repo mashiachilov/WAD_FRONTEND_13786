@@ -1,0 +1,8 @@
+<div class="delete">
+    <h2 mat-dialog-title class="delete_title">{{tableName}}</h2>
+    <div mat-dialog-content class="delete_content">Are you sure to delete element with Id - {{id}} from {{tableName}}</div>
+    <div mat-dialog-actions align="end" class="delete_buttons">
+        <button mat-stroked-button (click)="cancelTask()" color="accent">Cancel</button>
+        <button mat-stroked-button (click)="deleteTask()" color="primary">Delete</button>
+    </div>
+  </div>

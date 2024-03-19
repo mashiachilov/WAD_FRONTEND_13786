@@ -1,0 +1,28 @@
+.delete {
+    padding: 20px 30px;
+}
+
+.delete_title {
+    font-size: 24px;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.delete_content {
+    font-size: 20px;
+    color: gray;
+}
+
+.delete_buttons{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+
+.delete_buttons button {
+    width: 100px;
+}

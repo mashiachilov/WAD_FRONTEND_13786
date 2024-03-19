@@ -1,0 +1,10 @@
+<mat-toolbar class="navbar">
+    <div class="navbar_logo" (click)="redirect('')">
+        <span class="navbar_logo_text">Reception App</span>
+    </div>
+    <div class="navbar_items">
+        <button mat-flat-button (click)="redirect('recept')">Recepts</button>
+        <button mat-flat-button (click)="redirect('visitor')">Visitors</button>
+    </div>
+    <button mat-flat-button color="primary" [disabled]="disabled" (click)="create()">Create</button>
+</mat-toolbar>

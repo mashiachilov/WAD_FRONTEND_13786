@@ -1,0 +1,27 @@
+.calculation {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.studentId {
+    font-size: 40px;
+    width: 120px;
+    border: none;
+    outline: none;
+
+}
+
+.studentId::-webkit-outer-spin-button,
+.studentId::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.studentId[type=number] {
+  -moz-appearance: textfield;
+}
+
+.remainder {
+    font-weight: 700;
+}

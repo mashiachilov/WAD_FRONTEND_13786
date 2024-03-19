@@ -1,0 +1,45 @@
+
+<div class="table">
+  <table mat-table [dataSource]="tasks" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="Actions" mat>
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let item"> 
+          <div class="action_buttons" >
+              <button mat-flat-button aria-label="edit icon" color="primary" (click)="EditClicked(item.id)">
+                <mat-icon>edit</mat-icon> Edit
+              </button>
+              <button mat-flat-button aria-label="details icon" color="warn" (click)="DetailsClicked(item.id)">
+                <mat-icon>menu</mat-icon> Detail
+              </button>
+              <button mat-flat-button aria-label="delete icon" color="accent" (click)="DeleteClicked(item.id)">
+                <mat-icon>delete</mat-icon> Delete
+              </button>
+          </div>
+      </td>
+    </ng-container>
+
+      <ng-container matColumnDef="No">
+        <th mat-header-cell *matHeaderCellDef>No</th>
+        <td mat-cell *matCellDef="let element; let i = index">{{i + 1}}</td>
+      </ng-container>
+  
+      @for (item of displayedColumns; track item.key) {
+        <ng-container [matColumnDef]="item.key">
+          <th mat-header-cell *matHeaderCellDef>{{item.label}}</th>
+          <td mat-cell *matCellDef="let element">
+            @if (checkType(element[item.key])) {
+              <div [class]="['column' + element[item.key], 'column']"></div>
+            } @else {
+              <div>
+                {{element[item.key]}}
+              </div>
+            }
+          </td>
+        </ng-container>
+      }
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsStr"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsStr;"></tr>
+  </table>
+</div>
