@@ -1,0 +1,36 @@
+<div class="detail">
+    <h1>{{ title }} Detail</h1>
+    @for (item of detailIter; track $index) {
+        @if (item[0] !== 'recept' && item[0] !== 'notes' && item[0] !== 'description') {
+            <div class="detail_item">
+                <p class="detail_item_key">{{item[0]}}</p>
+                <span class="detail_item_dots"></span>
+                <p>{{item[1] || 'null'}}</p>
+            </div>
+        }
+    }
+
+    <p>
+        {{ detail.description }}
+    </p>
+    <p>
+        {{ detail.notes }}
+    </p>
+
+    @if (detail.recept) {
+        <h1>Visitor's recept Detail</h1>
+        @for (item of receptIter; track $index) {
+            @if (item[0] !== 'description') {
+                <div class="detail_item">
+                    <p class="detail_item_key">{{item[0]}}</p>
+                    <span class="detail_item_dots"></span>
+                    <p>{{item[1]}}</p>
+                </div>
+            }
+        }
+    }
+
+    <p>
+        {{ receptDesc }}
+    </p>
+</div>
