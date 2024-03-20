@@ -1,0 +1,33 @@
+<mat-form-field class="field">
+    <mat-label>Name </mat-label>
+    <input matInput name="name" type="text" [(ngModel)]="createRecept.name">
+</mat-form-field>
+@if (!!errorObj?.['Name']) {
+    <mat-error class="field_error">{{errorObj?.['Name']}}</mat-error>
+}
+<mat-form-field class="field">
+    <mat-label>Description</mat-label>
+    <input matInput name="description" type="text" [(ngModel)]="createRecept.description">
+</mat-form-field>
+@if (!!errorObj?.['Description']) {
+    <mat-error class="field_error">{{errorObj?.['Description']}}</mat-error>
+}
+<mat-form-field class="field">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" name="dateTime" [(ngModel)]="createRecept.dateTime">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+@if (!!errorObj?.['$.dateTime']) {
+    <mat-error class="field_error">{{errorObj?.['$.dateTime']}}</mat-error>
+}
+@if (!!errorObj?.['DateTime']) {
+    <mat-error class="field_error">{{errorObj?.['DateTime']}}</mat-error>
+}
+
+<mat-checkbox class="example-margin" [(ngModel)]="createRecept.status">Status</mat-checkbox>
+
+<div class="buttons">
+    <button mat-flat-button (click)="clearForm()" color="accent">Clear</button>
+    <button mat-flat-button (click)="submitForm()" color="primary">{{isEdit ? 'Edit' : 'Create'}}</button>
+</div>
