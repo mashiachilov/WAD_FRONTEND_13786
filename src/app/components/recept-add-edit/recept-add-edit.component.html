@@ -7,7 +7,7 @@
 }
 <mat-form-field class="field">
     <mat-label>Description</mat-label>
-    <input matInput name="description" type="text" [(ngModel)]="createRecept.description">
+    <textarea matInput [(ngModel)]="createRecept.description"></textarea>
 </mat-form-field>
 @if (!!errorObj?.['Description']) {
     <mat-error class="field_error">{{errorObj?.['Description']}}</mat-error>

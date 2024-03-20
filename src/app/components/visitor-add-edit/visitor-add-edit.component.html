@@ -1,0 +1,70 @@
+<mat-form-field class="field">
+    <mat-label>FirstName </mat-label>
+    <input matInput name="firstName" type="text" [(ngModel)]="createVisitor.firstName">
+</mat-form-field>
+@if (!!errorObj?.['FirstName']) {
+    <mat-error class="field_error">{{errorObj?.['FirstName']}}</mat-error>
+}
+
+<mat-form-field class="field">
+    <mat-label>LastName</mat-label>
+    <input matInput name="lastName" type="text" [(ngModel)]="createVisitor.lastName">
+</mat-form-field>
+@if (!!errorObj?.['LastName']) {
+    <mat-error class="field_error">{{errorObj?.['LastName']}}</mat-error>
+}
+
+<mat-form-field class="field">
+    <mat-label>Notes</mat-label>
+    <textarea matInput [(ngModel)]="createVisitor.notes"></textarea>
+</mat-form-field>
+@if (!!errorObj?.['Notes']) {
+    <mat-error class="field_error">{{errorObj?.['Notes']}}</mat-error>
+}
+
+<mat-form-field class="field">
+    <mat-label>Email</mat-label>
+    <input matInput name="email" type="text" [(ngModel)]="createVisitor.email">
+</mat-form-field>
+@if (!!errorObj?.['Email']) {
+    <mat-error class="field_error">{{errorObj?.['Email']}}</mat-error>
+}
+
+<mat-form-field class="field">
+    <mat-label>PhoneNumber</mat-label>
+    <input matInput name="phoneNumber" type="number" [(ngModel)]="createVisitor.phoneNumber">
+</mat-form-field>
+@if (!!errorObj?.['$.phoneNumber']) {
+    <mat-error class="field_error">{{errorObj?.['$.phoneNumber']}}</mat-error>
+}
+@if (!!errorObj?.['PhoneNumber']) {
+    <mat-error class="field_error">{{errorObj?.['PhoneNumber']}}</mat-error>
+}
+
+<mat-form-field class="field">
+    <mat-label>Arrival Date</mat-label>
+    <input matInput [matDatepicker]="picker" name="arrivalDate" [(ngModel)]="createVisitor.arrivalDate">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+@if (!!errorObj?.['$.arrivalDate']) {
+    <mat-error class="field_error">{{errorObj?.['$.arrivalDate']}}</mat-error>
+}
+@if (!!errorObj?.['ArrivalDate']) {
+    <mat-error class="field_error">{{errorObj?.['ArrivalDate']}}</mat-error>
+}
+
+<mat-form-field class="field">
+    <mat-label>Choose Recept</mat-label>
+    <mat-select [(ngModel)]="receptId" name="Recept">
+        @for(recept of recepts; track recept.id)
+        {
+        <mat-option [value]="recept.id">{{recept.name}}</mat-option>
+        }
+    </mat-select>
+</mat-form-field>
+
+<div class="buttons">
+    <button mat-flat-button (click)="clearForm()" color="accent">Clear</button>
+    <button mat-flat-button (click)="submitForm()" color="primary">Submit</button>
+</div>
